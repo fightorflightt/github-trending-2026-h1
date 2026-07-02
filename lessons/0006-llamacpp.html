@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 6 课：llama.cpp — 让 AI 在手机上跑起来的幕后英雄</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sidebar.js"></script>
+</head>
+<body>
+<div class="layout">
+<aside id="sidebar" class="sidebar"></aside>
+<div class="main">
+<span id="repo-link"></span>
+
+<h1>⚙️ 第 6 课：llama.cpp</h1>
+<p style="font-size:1.1rem;color:var(--muted)">让 AI 模型能在普通电脑甚至手机上运行的底层引擎</p>
+
+<div class="meta">
+  <span class="tag">⚙️ 底层引擎</span>
+  <span class="tag">📱 端侧运行</span>
+  <span class="tag">⭐ 115K+</span>
+  <span class="tag">C/C++</span>
+</div>
+
+<h2>一句话说清楚</h2>
+<p><strong>llama.cpp</strong> 是一个底层技术工具——它的作用是<strong>让大 AI 模型能在普通硬件上跑起来</strong>。没有它，上面讲的 OpenClaw、Open WebUI、本地 AI 都不可能实现。它是整个「本地 AI」生态的基石。</p>
+
+<div class="card">
+  <div class="card-title">🚗 用一个比喻</div>
+  <p>如果 AI 模型是「引擎」，那 llama.cpp 就是「变速箱」——它把大引擎的动力高效地传到轮子上。没有好的变速箱，再好的引擎也跑不动。</p>
+  <p>具体来说：一个本来需要 4 张高端显卡才能跑的 AI 模型，经过 llama.cpp 优化后，一台普通笔记本就能跑。</p>
+</div>
+
+<h2>它做了什么？</h2>
+<ul>
+  <li><strong>量化（Quantization）</strong>：压缩模型体积，比如把 16GB 的模型压到 4GB，性能损失很小</li>
+  <li><strong>CPU 优化</strong>：让 AI 模型在普通 CPU 上跑（不需要昂贵显卡）</li>
+  <li><strong>跨平台</strong>：Windows、Mac、Linux、甚至树莓派都能跑</li>
+  <li><strong>手机支持</strong>：iPhone、Android 上也能跑 AI 模型</li>
+</ul>
+
+<h2>为什么重要？</h2>
+<ol>
+  <li><strong>它是整个本地 AI 生态的地基</strong>：Ollama、Open WebUI、OpenClaw 等几十个项目都依赖它</li>
+  <li><strong>让 AI 民主化</strong>：不用买 10 万的显卡，用你手头的笔记本就能跑</li>
+  <li><strong>隐私的基础</strong>：只有能在本地跑，数据才能不外传</li>
+</ol>
+
+<h2>💡 做独立开发的启发</h2>
+<ul>
+  <li><strong>不用理解技术细节，但要理解趋势</strong>：AI 从「云端」走向「本地」是大势所趋</li>
+  <li><strong>「端侧 AI」创造新品类</strong>：以前只能在服务器做的事，现在手机上就能做——这里面有新产品的机会</li>
+  <li><strong>参照历史</strong>：就像当年云计算催生了 SaaS，现在本地 AI 引擎成熟会催生一波新的端侧应用</li>
+</ul>
+
+<hr>
+
+<p><strong>推荐阅读：</strong><a href="https://github.com/ggml-org/llama.cpp" target="_blank">llama.cpp GitHub 仓库</a></p>
+
+<div class="reminder"><strong>💬 有问题？</strong> 这门课偏技术底层，如果「量化」「推理」这些词让你困惑，我来用人话解释。</div>
+
+<div class="nav">
+  <a href="0005-open-webui.html">← Open WebUI</a>
+  <a href="0007-ponytail.html">下一课：ponytail →</a>
+</div>
+
+</div>
+</div>
+</body>
+</html>

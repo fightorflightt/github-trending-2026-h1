@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>词汇表 · 2026 H1 GitHub 热门项目</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<h1>📖 词汇表</h1>
+<p style="color:var(--muted)">课程中出现的关键概念，用人话解释</p>
+
+<h2>AI 基础</h2>
+
+<h3>大语言模型（LLM）</h3>
+<p>就是 ChatGPT 背后的那类 AI。读了几万亿字的文本后，学会了「理解语言」和「生成文字」的能力。可以理解成一个读了全世界所有书的人。</p>
+
+<h3>推理（Inference）</h3>
+<p>AI 模型「用起来」的过程叫推理。训练模型是「学习」，推理是「考试/应用」。本地跑模型 = 在自己设备上做推理。</p>
+
+<h3>量化（Quantization）</h3>
+<p>把 AI 模型「压小」的技术。好比把一张高清照片压成 JPG——肉眼看差不多，体积小了很多。llama.cpp 的核心能力就是这个。</p>
+
+<h3>RAG（检索增强生成）</h3>
+<p>让 AI 先查资料再回答的技术。比如你上传了公司手册，AI 回答问题前先去手册里找相关内容，再基于找到的内容回答。Open WebUI 就支持这个。</p>
+
+<h2>智能体（Agent）</h2>
+
+<h3>AI Agent / 智能体</h3>
+<p>比普通聊天 AI 更高级——普通的 AI 只会聊，Agent 能<strong>干事情</strong>：读文件、上网搜索、执行命令、调用其他工具。可以理解成一个能自主行动的 AI。</p>
+
+<h3>Agentic Coding</h3>
+<p>2026 最热的词之一。AI 不只是帮你写代码片段，而是<strong>自主完成整个编程任务</strong>：理解需求 → 读代码 → 写代码 → 测试 → 修 bug → 提交。Claude Code 和 opencode 都是干这个的。</p>
+
+<h3>多 Agent 编排</h3>
+<p>让多个 AI Agent 组成团队，各司其职、互相配合。就像项目经理管理团队一样。superpowers 就是做这个的。</p>
+
+<h3>自进化 Agent</h3>
+<p>能从每次任务中学东西、越用越聪明的 Agent。Hermes Agent 的核心卖点。</p>
+
+<h2>Skills 生态</h2>
+
+<h3>Skill（技能）</h3>
+<p>2026 最火的新概念。一个 Skill 就是一个文本文件，里面写了特定领域的知识和操作流程。AI 读到这个文件就获得了对应的专业能力——就像给手机装 App 一样。</p>
+
+<h3>厂商锁定（Vendor Lock-in）</h3>
+<p>指你用了某家公司的产品后，因为数据格式、API、生态等原因，很难换到别家。opencode 火的原因就是它不锁定任何厂商。</p>
+
+<h2>本地 AI</h2>
+
+<h3>端侧 AI / 本地 AI</h3>
+<p>在你自己设备（手机、电脑）上运行的 AI，不上传数据到云端。优点是隐私、低延迟、离线可用。OpenClaw 和 Open WebUI 都是这个方向。</p>
+
+<h3>Ollama</h3>
+<p>一个免费工具，让你能一行命令就在自己电脑上跑 AI 模型。它是整个本地 AI 生态的「启动器」。</p>
+
+<h2>无代码 / 低代码</h2>
+
+<h3>No-Code（无代码）</h3>
+<p>不用写一行代码就能做出软件的工具或平台。比如 Dify（拖拽搭 AI 应用）、n8n（拖拽搭自动化流程）、NocoDB（表格界面管数据库）。这类工具是独立开发者的加速器。</p>
+
+<h3>低代码</h3>
+<p>大部分不用写代码，但预留了写代码的入口给高级用户。比无代码灵活，但门槛略高。</p>
+
+<h3>自部署（Self-Hosted）</h3>
+<p>软件装在你自己的服务器或电脑上，而不是用别人提供的云服务。优点是数据安全、无月费、可控。几乎所有课程中提到的项目都支持自部署。</p>
+
+<h2>后端 / 基础设施</h2>
+
+<h3>后端（Backend）</h3>
+<p>一个 App 或网站「看不见的部分」——存数据、管用户登录、处理业务逻辑。用户直接操作的是前端（界面），背后支撑的是后端。PocketBase 就是把后端打包成一个简单工具。</p>
+
+<h3>API（应用程序接口）</h3>
+<p>让不同软件之间说话的「接头」。比如你的 App 要通过 API 告诉数据库「存一下这条数据」。PocketBase 自动生成 API，意味着你不用自己写这些接头代码。</p>
+
+<h3>向量数据库</h3>
+<p>一种专门给 AI 用的新型数据库。它存的不是「数字和文字」，而是「意思的相似度」。比如「苹果」和「水果」在向量数据库里距离很近。PocketBase v2 就内置了这个。</p>
+
+<h3>Docker</h3>
+<p>把软件打包成「集装箱」的工具。一个命令就能在任何服务器上把软件跑起来，不用管环境配置。Stirling-PDF、n8n 等项目都推荐用 Docker 部署。</p>
+
+<h2>设计 / 前端</h2>
+
+<h3>设计系统（Design System）</h3>
+<p>一套预先定义好的设计规范——包括配色、字体、按钮样式、间距规则等。保证产品里所有页面风格统一。Open Design 就是把 150+ 套设计系统给 AI 用。</p>
+
+<h3>前端框架（React / Vue / Svelte）</h3>
+<p>做网页界面的「脚手架」。你不用从零写 HTML，框架提供了现成的积木。screenshot-to-code 支持输出多种框架的代码。</p>
+
+<h3>Markdown</h3>
+<p>一种极简的文本格式。用 `#` 表示标题、`**文字**` 表示加粗。特点是纯文本，任何设备都能打开，且能被 AI 完美理解。markitdown 就是把万物转成 Markdown。</p>
+
+<h2>产品 / 商业</h2>
+
+<h3>开源替代品（Open-source Alternative）</h3>
+<p>对大厂闭源产品的开源版复刻。比如 NocoDB 替代 Airtable，n8n 替代 Zapier，Stirling-PDF 替代 Adobe Acrobat。这是独立开发者最可靠的创业策略之一。</p>
+
+<h3>厂商锁定（Vendor Lock-in）</h3>
+<p>你用了某家公司的产品后，因为数据格式、API、生态等原因，很难换到别家。opencode 和很多开源项目火的原因就是「不被锁定」。</p>
+
+<h3>MVP（最小可行产品）</h3>
+<p>用最少的力气做出的、能验证核心想法的产品版本。Dify、PocketBase 这些工具让 MVP 的制作成本大幅降低。</p>
+
+<p style="margin-top:3rem;font-size:0.85rem;color:var(--muted);">
+  本词汇表会随课程更新。有不明白的词随时问。
+</p>
+
+</body>
+</html>
