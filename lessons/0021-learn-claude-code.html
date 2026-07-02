@@ -5,8 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>第 21 课：Learn Claude Code — 开源教程怎么教 AI 编程</title>
 <link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/sidebar.js"></script>
 </head>
 <body>
+<div class="layout">
+<aside id="sidebar" class="sidebar"></aside>
+<div class="main">
+<span id="repo-link"></span>
 
 <h1>🏗️ 第 21 课：Learn Claude Code</h1>
 <p style="font-size:1.1rem;color:var(--muted)">一个教人从零搭建 AI 编程助手的开源课程——69.5K 星，比大多数工具项目还火</p>
@@ -29,19 +34,41 @@
 
 <h2>这到底是个什么东西？</h2>
 
-<p>它不是 App，不是工具，不是平台——它是一套<strong>开源教材</strong>。GitHub 仓库里是 20 个文件夹（s01 到 s20），每个文件夹里有一篇教程 + 一份能跑的示例代码。配套网站 learn.shareai.run 把内容做成了可交互的网页。</p>
+<p>它不是 App，不是工具——它是一套<strong>开源教材</strong>。仓库里 20 个文件夹（s01→s20），每个里面一篇教程 + 能跑的示例代码。配套网站 <code>learn.shareai.run</code> 把内容做成了交互式网页。</p>
 
-<p>它的教学目标很明确：让你<strong>理解 Claude Code 这种 AI 编程助手内部是怎么运作的</strong>。不是读论文、不是看架构图，而是自己动手写一个迷你版出来。</p>
+<p>教学目标是让你<strong>理解 Claude Code 这种 AI 编程助手内部怎么运作的</strong>。不是读论文，是<strong>自己动手写一个迷你版出来</strong>。</p>
 
-<p>它把整个 AI 编程助手拆成了 5 层、20 步：</p>
+<h2>5 层架构，20 步渐进</h2>
 
-<ol>
-  <li><strong>工具与执行层（s01–s04）</strong>：Agent 循环 → 工具注册 → 权限控制 → 钩子系统。先让 AI 能「做事情」。</li>
-  <li><strong>规划与控制层（s05–s08）</strong>：计划工具 → 子代理 → 技能加载 → 上下文压缩。让 AI 能「处理复杂任务」。</li>
-  <li><strong>记忆与恢复层（s09–s11）</strong>：跨会话记忆 → 系统提示组装 → 错误恢复。让 AI 能「记住东西 + 出错自救」。</li>
-  <li><strong>并发与调度层（s12–s14）</strong>：任务系统 → 后台任务 → 定时任务。让 AI 能「同时干多件事」。</li>
-  <li><strong>多 Agent 平台层（s15–s20）</strong>：Agent 团队 → 团队协议 → 自主 Agent → 工作树隔离 → MCP 插件 → 综合 Agent。让多个 AI「组队协作」。</li>
-</ol>
+<div class="card">
+  <div class="card-title">🔧 第 1 层：工具与执行（s01–s04）</div>
+  <p>Agent 循环 → 工具注册 → 权限控制 → 钩子系统</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0;">目标：先让 AI 能「做事情」——调用工具、读写文件</p>
+</div>
+
+<div class="card">
+  <div class="card-title">🧠 第 2 层：规划与控制（s05–s08）</div>
+  <p>计划工具 → 子代理 → 技能加载 → 上下文压缩</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0;">目标：让 AI 能「处理复杂任务」——拆解目标、协调子任务</p>
+</div>
+
+<div class="card">
+  <div class="card-title">💾 第 3 层：记忆与恢复（s09–s11）</div>
+  <p>跨会话记忆 → 系统提示组装 → 错误恢复</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0;">目标：让 AI 能「记住东西 + 出错自救」</p>
+</div>
+
+<div class="card">
+  <div class="card-title">⚡ 第 4 层：并发与调度（s12–s14）</div>
+  <p>任务系统 → 后台任务 → 定时任务</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0;">目标：让 AI 能「同时干多件事」</p>
+</div>
+
+<div class="card">
+  <div class="card-title">🤝 第 5 层：多 Agent 平台（s15–s20）</div>
+  <p>Agent 团队 → 团队协议 → 自主 Agent → 工作树隔离 → MCP 插件 → 综合 Agent</p>
+  <p style="color:var(--muted);font-size:0.9rem;margin-bottom:0;">目标：让多个 AI「组队协作」，一个当主管、其他当专家</p>
+</div>
 
 <h2>解决了什么问题？</h2>
 <div class="card">
@@ -53,21 +80,49 @@
   <p>从 102 行代码的最小 Agent 开始 → 每步只加一个机制 → 代码可以跑 → 20 步后你手里有一个完整的 AI 编程助手</p>
 </div>
 
-<h2>为什么一个「教程」能拿到 69.5K 星？</h2>
-<ol>
-  <li><strong>AI 编程是 2026 最热赛道</strong>：Claude Code、Cursor、Copilot……所有人都在用 AI 写代码，但几乎没人知道它们内部怎么运转。这个课程满足了一个巨大的好奇心缺口。</li>
-  <li><strong>「从 0 到 1，每次只加一个机制」是天才的教学设计</strong>：不做大而全的架构讲解，而是让你一行行加代码，每加一行都能跑、都能看到效果。这种「即时反馈」的学习体验比任何教科书都好。</li>
-  <li><strong>中英日三语 + 交互式网站</strong>：不只是 GitHub 上的 Markdown 文件，还配了一个完整的教学网站，有代码高亮、步骤动画、多语言切换。投入度远超普通开源项目。</li>
-  <li><strong>开源教程 + 社区效应</strong>：学完的人会自发传播——「我用这个课程写了一个迷你 Claude Code」是绝佳的内容营销素材。</li>
-</ol>
+<h2>一个「教程」凭什么 69.5K 星？</h2>
+
+<div class="card">
+  <div class="card-title">🎯 踩中了 2026 最大的好奇心缺口</div>
+  <p>Claude Code、Cursor、Copilot……所有人都在用 AI 写代码，但几乎没人知道它们内部怎么运转。这个课程恰好回答了「你天天用的东西到底怎么做的」。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">🧱 「每次只加一块积木」的教学设计</div>
+  <p>不做大而全的架构图，而是让你一行行加代码，每加一行都能跑、都能看到效果。从 102 行代码的最小 Agent 开始，20 步后手里是一个完整的 AI 编程助手。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">🌐 中英日三语 + 交互式网站</div>
+  <p>不只是 GitHub 上的 Markdown，还配了完整的教学网站——代码高亮、步骤动画、多语言切换。投入度远超普通开源项目。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">📣 自带传播属性</div>
+  <p>学完的人会自发发推——「我用这个课程写了一个迷你 Claude Code」本身就是绝佳的内容营销。</p>
+</div>
 
 <h2>💡 做独立开发的启发</h2>
-<ul>
-  <li><strong>「教程」本身可以是一个很成功的开源产品</strong>：大多数开源项目是「给你一个工具」，Learn Claude Code 是「给你一套课」。但它的星数超过了绝大多数工具类项目。内容型产品放在 GitHub 上，社区传播力可能比工具更强——因为内容天然有故事性、容易写推文、容易做视频。</li>
-  <li><strong>「渐进式复杂度」是产品设计的万能法则</strong>：这个课程的设计哲学——「从最小可用版本开始，每次只加一个机制，每一步都能跑」——完全可以平移到你做 SaaS 或 App 的 onboarding 流程里。用户第一次打开你的产品，别一股脑展示所有功能，让他们先完成一个最小闭环，再逐步解锁新能力。</li>
-  <li><strong>「消除黑箱焦虑」是刚需</strong>：为什么 69.5K 人想了解 Claude Code 内部怎么做？因为大家天天用 AI 写代码，但心里没底——它到底怎么决策的？会不会漏掉重要信息？ 你做的任何产品，如果用户「依赖它但不理解它」，就有做透明化解说的价值。</li>
-  <li><strong>对返利的启发</strong>：你的代理每天都在用转链工具，但他们真的理解「转链」是怎么回事吗？不理解就没法排查问题、没法跟用户解释。一个「转链是怎么工作的」5 分钟图解教程，放在 App 或后台里，可能就是减少客服压力的杠杆点。</li>
-</ul>
+
+<div class="card">
+  <div class="card-title">📖 「教程」可以是比工具更成功的开源产品</div>
+  <p>Learn Claude Code 的星数超过了绝大多数工具类项目。内容型产品天然有故事性——容易写推文、做视频、引发讨论。如果你在某个领域有深度 know-how，把它做成开源教程可能比做成工具传播力更强。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">🪜 「渐进式复杂度」是产品设计的万能法则</div>
+  <p>「从最小可用版本开始，每次只加一个机制，每一步都能跑」——这套哲学可以平移到你的 App onboarding 里。用户第一次打开产品，别一股脑展示所有功能，先完成一个最小闭环，再逐步解锁新能力。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">🔍 「消除黑箱焦虑」是隐性刚需</div>
+  <p>为什么 69.5K 人想了解 Claude Code 内部？因为大家天天用 AI，但心里没底——它怎么决策的？会不会漏掉信息？你做任何产品，如果用户「依赖它但不理解它」，就有做透明化解说的价值。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">💡 对返利的启发</div>
+  <p>你的代理每天都在用转链工具，但他们真的理解「转链」是怎么回事吗？不理解就没法排查问题、没法跟用户解释。做一个「转链是怎么工作的」5 分钟图解，放在 App 里，可能就是减少客服压力的杠杆点。</p>
+</div>
 
 <hr>
 <p><strong>推荐阅读：</strong><a href="https://github.com/shareAI-lab/learn-claude-code" target="_blank">GitHub 仓库</a> · <a href="https://learn.shareai.run/zh" target="_blank">教学网站</a></p>
@@ -79,5 +134,7 @@
   <a href="../reference/glossary.html">📖 词汇表 →</a>
 </div>
 
+</div>
+</div>
 </body>
 </html>
